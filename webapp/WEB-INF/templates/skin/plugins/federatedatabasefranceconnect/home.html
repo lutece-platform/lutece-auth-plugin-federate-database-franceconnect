@@ -1,27 +1,28 @@
-Gestion Mes liens de fédération avec France connect
-
-<#if user?? && federate_link??>
- <form class="form-horizontal" method="post" id="federateFranceConnec"
-			action="jsp/site/Portal.jsp?page=federateFranceConnect">
-			<div class="form-group">
-				<div class="col-xs-12 col-sm-offset-3 col-sm-9">
-					<button class="btn btn-primary btn-sm" type="submit"
-						name="view_getRemoveFederation">
-						<i class="fa fa-times"></i> <span class="hidden-xs">#i18n{federatedatabasefranceconnect.home.btnRemoveFederation}</span>
-					</button>
+<div class="row">
+	<div class="col-md-12">
+		<h2>Gestion Mes liens de fédération avec France connect</h2>
+		<div class="well">
+		   	<div class="row">
+				<div class="col-md-offset-1 col-md-7">
+					<#if user?? && federate_link??>
+					 	<form method="post" id="federateFranceConnec" action="jsp/site/Portal.jsp?page=federateFranceConnect">
+							<button class="btn btn-link" type="submit" name="view_getRemoveFederation">
+								<i class="fa fa-forward"></i> #i18n{federatedatabasefranceconnect.home.btnRemoveFederation}
+							</button>
+						</form>
+					<#else>
+						<form method="post" id="federateFranceConnec" action="servlet/plugins/franceconnect/callback?data_client=federateDatabase">
+			 				<button class="btn btn-primary btn-sm" type="submit" name="view_getRemoveFederation">
+								<i class="fa fa-forward"></i> #i18n{federatedatabasefranceconnect.home.btnAddFederation}
+							</button>
+						</form>
+					</#if>
 				</div>
+				<div class="col-md-4">
+					<img src="images/local/skin/plugins/federatedatabasefranceconnect/franceconnect_badge.png" alt="FranceConnect badge"/>
+		   		</div>
 			</div>
-		</form>
-<#else>
-	<form class="form-horizontal" method="post" id="federateFranceConnec"
-			action="servlet/plugins/franceconnect/callback?data_client=federateDatabase">
-			<div class="form-group">
-				<div class="col-xs-12 col-sm-offset-3 col-sm-9">
-					<button class="btn btn-primary btn-sm" type="submit"
-						name="view_getRemoveFederation">
-						<i class="fa fa-times"></i> <span class="hidden-xs">#i18n{federatedatabasefranceconnect.home.btnAddFederation}</span>
-					</button>
-				</div>
-			</div>
-		</form>
-</#if>
+		</div>
+	</div>
+</div>
+			
