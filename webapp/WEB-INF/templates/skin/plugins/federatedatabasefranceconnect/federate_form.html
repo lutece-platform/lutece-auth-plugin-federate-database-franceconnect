@@ -1,0 +1,54 @@
+
+
+<div class="row">
+	<div class="col-md-12">
+		
+		<#if infos?? && infos?size &gt; 0 > 
+			<@messages infos=infos />
+			<form class="form" action="${back_url!}" method="post">
+				<div class="col-xs-12 col-sm-offset-3 col-sm-9">
+						<button class="btn btn-primary btn-sm" type="submit" name="action_saveFederation">
+							<i class="fa fa-check"></i>
+							<span class="hidden-xs" >#i18n{federatedatabasefranceconnect.federate_form.btnBackUrl}</span>
+						</button>
+				</div>
+			</form>
+		<#else>
+			<br>
+            <br>
+            <h3>Authentifiez Vous afin de pouvoir lier votre compte à france connect</h3>
+            <br/>
+            <br>
+            <div class="well">
+            	<img src="images/local/skin/plugins/federatedatabasefranceconnect/franceconnect_badge.png" alt="FranceConnect badge"/>
+            </div>	
+			<@messages errors=errors />
+			<form class="form-horizontal" method="post" id="federateFranceConnect"
+				action="jsp/site/Portal.jsp?page=federateFranceConnect">
+	
+	
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-3" for="login">#i18n{federatedatabasefranceconnect.federate_form.labelLogin}&nbsp;*:</label>
+					<div class="col-xs-12 col-sm-9 col-md-9">
+						<input id="login" name="login" type="text" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-3" for="password">#i18n{federatedatabasefranceconnect.federate_form.labelPassword}&nbsp;*:</label>
+					<div class="col-xs-12 col-sm-9 col-md-9">
+						<input id="password" name="password" type="password" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12 col-sm-offset-3 col-sm-9">
+						<button class="btn btn-primary btn-sm" type="submit" name="action_saveFederation">
+							<i class="fa fa-check"></i>
+							<span class="hidden-xs" >#i18n{federatedatabasefranceconnect.federate_form.btnSubmit}</span>
+						</button>
+					</div>
+				</div>	
+			</form>
+		</#if>	
+	</div>
+</div>
+

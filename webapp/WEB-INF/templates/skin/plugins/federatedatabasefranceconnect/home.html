@@ -1,0 +1,27 @@
+Gestion Mes liens de fédération avec France connect
+
+<#if user?? && federate_link??>
+ <form class="form-horizontal" method="post" id="federateFranceConnec"
+			action="jsp/site/Portal.jsp?page=federateFranceConnect">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-offset-3 col-sm-9">
+					<button class="btn btn-primary btn-sm" type="submit"
+						name="view_getRemoveFederation">
+						<i class="fa fa-times"></i> <span class="hidden-xs">#i18n{federatedatabasefranceconnect.home.btnRemoveFederation}</span>
+					</button>
+				</div>
+			</div>
+		</form>
+<#else>
+	<form class="form-horizontal" method="post" id="federateFranceConnec"
+			action="servlet/plugins/franceconnect/callback?data_client=federateDatabase">
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-offset-3 col-sm-9">
+					<button class="btn btn-primary btn-sm" type="submit"
+						name="view_getRemoveFederation">
+						<i class="fa fa-times"></i> <span class="hidden-xs">#i18n{federatedatabasefranceconnect.home.btnAddFederation}</span>
+					</button>
+				</div>
+			</div>
+		</form>
+</#if>
