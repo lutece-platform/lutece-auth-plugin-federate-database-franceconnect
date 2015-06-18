@@ -40,7 +40,7 @@ public final class FederateService {
 		String strNextURL = PortalJspBean.getLoginNextUrl(request);
 
 		if (strNextURL == null) {
-			strNextURL = SecurityService.getInstance().getLoginPageUrl();
+			strNextURL = AppPathService.getBaseUrl(request);
 		}
 
 		return strNextURL;
